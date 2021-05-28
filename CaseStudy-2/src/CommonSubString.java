@@ -1,34 +1,30 @@
 
-import java.util.HashSet;
+
 
 public class CommonSubString {
 
-	public static String twoStrings(String str1, String str2) {
-
-		HashSet<Character> string1_chars = new HashSet();
-		HashSet<Character> string2_chars = new HashSet();
-
-		for (int i = 0; i < str1.length(); i++) {
-			string1_chars.add(str1.charAt(i));
-		}
-		for (int i = 0; i < str2.length(); i++) {
-			string2_chars.add(str2.charAt(i));
-		}
-		string1_chars.retainAll(string2_chars);
-		if (!string1_chars.isEmpty()) {
-			System.out.println("YES");
-		} else {
-			System.out.println("NO");
-		}
-		return null;
-
-	}
+	
 
 	public static void main(String[] args) {
 
-		String string1 = "Hello", string2 = "Hi";
+		String a[] = { "km", "mn", "op" };
 
-		twoStrings(str1, str2);
+		String b[] = { "kl", "uv", "ol" };
+		for (int i = 0; i < a.length; i++) {
+
+			for (int j = 0; j <= a.length - 2; j++) {
+				char[] a1 = a[i].toCharArray();
+
+				char[] b1 = b[i].toCharArray();
+
+				if (a1[j] == (b1[j])) {
+					System.out.println("YES." + "\t" + "The common substring is: " + a1[j]);
+				} else {
+					System.out.println("NO");
+				}
+			}
+		}
+
 
 	}
 
